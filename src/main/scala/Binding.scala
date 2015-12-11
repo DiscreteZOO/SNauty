@@ -5,13 +5,13 @@ import scala.collection.mutable.ArrayBuffer
  */
 class Binding {
   @native
-  def sparseNauty(indices: Array[Int], degrees: Array[Int], neighbours: Array[Int], mininvarlevel: Int, maxinvarlevel: Int, invararg: Int): String
-  def callSparseNauty(adjacencyList: Map[Int, Set[Int]]): String = {
-    val vertexIndices = new ArrayBuffer[Int]
-    val vertexDegrees = new ArrayBuffer[Int]
-    val neighboursList = new ArrayBuffer[Int]
+  def sparseNauty(indices: Array[Long], degrees: Array[Long], neighbours: Array[Long], mininvarlevel: Int, maxinvarlevel: Int, invararg: Int): String
+  def callSparseNauty(adjacencyList: Map[Long, Set[Long]]): String = {
+    val vertexIndices = new ArrayBuffer[Long]
+    val vertexDegrees = new ArrayBuffer[Long]
+    val neighboursList = new ArrayBuffer[Long]
 
-    def appendVertex(neighbours: Set[Int]): Unit = {
+    def appendVertex(neighbours: Set[Long]): Unit = {
       vertexIndices += neighboursList.length
       vertexDegrees += neighbours.size
       neighboursList ++= neighbours

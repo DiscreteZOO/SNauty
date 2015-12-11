@@ -21,9 +21,9 @@ using namespace std;
 JNIEXPORT jstring JNICALL Java_Binding_sparseNauty(
     JNIEnv *env,
     jobject thisObject,
-    jintArray arrayIndices,
-    jintArray arrayDegrees,
-    jintArray arrayNeighbours,
+    jlongArray arrayIndices,
+    jlongArray arrayDegrees,
+    jlongArray arrayNeighbours,
     jint mininvarlevel,
     jint maxinvarlevel,
     jint invararg)
