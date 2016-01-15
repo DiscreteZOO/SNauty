@@ -1,3 +1,5 @@
+package xyz.discretezoo.snauty
+
 import scala.collection.mutable.ArrayBuffer
 
 /**

@@ -73,7 +73,7 @@
                             <workingDirectory>${basedir}</workingDirectory>
                             <javahOutputFileName>binding.h</javahOutputFileName>
                             <javahClassNames>
-                                <javahClassName>Binding</javahClassName>
+                                <javahClassName>xyz.discretezoo.snauty.Binding</javahClassName>
                             </javahClassNames>
                         </configuration>
                         <goals>
