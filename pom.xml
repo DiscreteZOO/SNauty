@@ -1,4 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>xyz.discretezoo.snauty</groupId>
     <artifactId>snauty</artifactId>
@@ -55,10 +58,10 @@
                         </source>
                     </sources>
                     <compilerStartOptions>
-                        <compilerStartOption>-c -I/Users/katja/Nauty -std=c++11</compilerStartOption>
+                        <compilerStartOption>-c -I/Users/katja/Math/Nauty -std=c++11</compilerStartOption>
                     </compilerStartOptions>
                     <linkerStartOptions>
-                        <linkerStartOption>-shared /Users/katja/Nauty/nauty.a</linkerStartOption>
+                        <linkerStartOption>-shared /Users/katja/Math/Nauty/nauty.a</linkerStartOption>
                     </linkerStartOptions>
                 </configuration>
 

@@ -19,14 +19,14 @@ extern "C"
 using namespace std;
 
 JNIEXPORT jstring JNICALL Java_Binding_sparseNauty(
-    JNIEnv *env,
-    jobject thisObject,
-    jlongArray arrayIndices,
-    jlongArray arrayDegrees,
-    jlongArray arrayNeighbours,
-    jint mininvarlevel,
-    jint maxinvarlevel,
-    jint invararg)
+	JNIEnv *env,
+	jobject thisObject,
+	jlongArray arrayIndices,
+	jlongArray arrayDegrees,
+	jlongArray arrayNeighbours,
+	jint mininvarlevel,
+	jint maxinvarlevel,
+	jint invararg)
 {
 	jsize order = env->GetArrayLength(arrayIndices);
 	jsize directedEdgesNum = env->GetArrayLength(arrayNeighbours);
@@ -34,26 +34,26 @@ JNIEXPORT jstring JNICALL Java_Binding_sparseNauty(
 	jint *degrees = env->GetIntArrayElements(arrayDegrees, 0);
 	jint *neighbours = env->GetIntArrayElements(arrayNeighbours, 0);
 
-    DYNALLSTAT(int, lab, lab_sz);
-    DYNALLSTAT(int, ptn, ptn_sz);
-    DYNALLSTAT(int, orbits, orbits_sz);
-    DYNALLSTAT(int, nmap, nmap_sz);
+	DYNALLSTAT(int, lab, lab_sz);
+	DYNALLSTAT(int, ptn, ptn_sz);
+	DYNALLSTAT(int, orbits, orbits_sz);
+	DYNALLSTAT(int, nmap, nmap_sz);
 
-    static DEFAULTOPTIONS_SPARSEGRAPH(options);
+	static DEFAULTOPTIONS_SPARSEGRAPH(options);
 	statsblk stats;
 	/* Declare and initialize sparse graph structures */
-    SG_DECL(sg);
+	SG_DECL(sg);
 	SG_DECL(cg);
 
-    options.getcanon = TRUE; // option for canonical labelling
+	options.getcanon = TRUE; // option for canonical labelling
 	options.mininvarlevel = mininvarlevel; // best 0, 1, 2
 	options.maxinvarlevel = maxinvarlevel; // best 0, 1, 2
 	options.invararg = invararg; // 0, 8 for sparse graphs
 
-    nauty_check(WORDSIZE, SETWORDSNEEDED(order), order, NAUTYVERSIONID);
+	nauty_check(WORDSIZE, SETWORDSNEEDED(order), order, NAUTYVERSIONID);
 
-    DYNALLOC1(int, lab, lab_sz, order, (char *) "malloc");
-    DYNALLOC1(int, ptn, ptn_sz, order, (char *) "malloc");
+	DYNALLOC1(int, lab, lab_sz, order, (char *) "malloc");
+	DYNALLOC1(int, ptn, ptn_sz, order, (char *) "malloc");
 	DYNALLOC1(int, orbits, orbits_sz, order, (char *) "malloc");
 	DYNALLOC1(int, nmap, nmap_sz, order, (char *) "malloc");
 	SG_ALLOC(sg, order, directedEdgesNum, (char *) "malloc");
